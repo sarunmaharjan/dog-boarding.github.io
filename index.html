@@ -5,51 +5,113 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Loving Dog Sitting and Cozy Boarding</title>
   <style>
+    :root {
+      --fern-green: #254117;
+      --forest-green: #228B22;
+      --yellow-plum: #E3C565;
+      --beige-gray: #C6BBAE;
+      --golden-brown: #996515;
+      --mocha: #7B6A58;
+    }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0; padding: 0;
-      background: #fdfdfc; color: #4a3f35;
+      background: var(--beige-gray); 
+      color: var(--fern-green);
     }
     header {
-      background: linear-gradient(135deg, #c8f7c5, #ffe6fa);
-      color: #4a3f35; padding: 20px 10px;
-      text-align: center; border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      background: var(--forest-green);
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
     }
-    header h1 { font-size: 1.8em; margin: 0; font-family: 'Georgia', serif; }
-    header p { font-size: 1em; margin-top: 6px; }
+    header h1 {
+      font-size: 2em;
+      margin: 0;
+      font-family: 'Georgia', serif;
+    }
+    header p { font-size: 1.1em; margin-top: 6px; }
 
     main {
-      max-width: 800px; margin: 30px auto; padding: 30px;
-      background: #ffffff; border-radius: 16px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+      max-width: 800px; 
+      margin: 30px auto; 
+      padding: 30px;
+      background: #fff; 
+      border: 3px solid var(--golden-brown);
     }
-    h2 { margin-top: 0; color: #6a8d73; font-family: 'Georgia', serif; display: flex; align-items: center; gap: 8px; }
+    h2 { 
+      margin-top: 0; 
+      color: var(--forest-green); 
+      font-family: 'Georgia', serif; 
+      display: flex; 
+      align-items: center; 
+      gap: 8px; 
+    }
     ul { line-height: 1.8; }
     label { display: block; margin-top: 15px; font-weight: 600; }
     input {
       padding: 10px; width: 100%; margin-top: 8px;
-      border: 1px solid #b8d8be; border-radius: 8px;
-      font-size: 1em; background: #f9fff9;
+      border: 2px solid var(--beige-gray); border-radius: 4px;
+      font-size: 1em; background: #fafafa;
     }
     button {
       margin-top: 20px; padding: 12px 24px;
-      background: #a8d5ba; color: #fff; border: none;
-      border-radius: 30px; cursor: pointer; font-size: 1em;
-      transition: background 0.3s ease;
+      background: var(--yellow-plum); 
+      color: var(--fern-green); 
+      border: none;
+      border-radius: 4px; 
+      cursor: pointer; 
+      font-size: 1em;
+      font-weight: bold;
     }
-    button:hover { background: #87bfa0; }
+    button:hover { background: var(--golden-brown); color: #fff; }
     .result {
-      margin-top: 25px; font-weight: bold; font-size: 1.2em;
-      background: #f0fff4; padding: 15px; border-left: 5px solid #a8d5ba;
-      border-radius: 8px;
+      margin-top: 25px; font-weight: bold; font-size: 1.1em;
+      background: var(--beige-gray); 
+      padding: 15px; 
+      border-left: 5px solid var(--forest-green);
     }
     a.venmo-link {
-      color: #6a8d73; font-weight: bold; text-decoration: none;
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--forest-green);
+      color: #fff; 
+      font-weight: bold; 
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 4px;
     }
-    a.venmo-link:hover { text-decoration: underline; }
-    .icon {
-      font-size: 1.2em; }
+    a.venmo-link:hover { background: var(--fern-green); }
+    .icon { font-size: 1.2em; }
+
+    footer {
+      background: var(--mocha);
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: 30px;
+    }
+    footer p {
+      margin: 6px 0;
+      font-size: 0.95em;
+    }
+    .socials {
+      margin-top: 10px;
+    }
+    .socials a {
+      color: #fff;
+      margin: 0 8px;
+      font-size: 1.3em;
+      text-decoration: none;
+    }
+    .socials a:hover {
+      color: var(--yellow-plum);
+    }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 1.5em; }
+      main { padding: 20px; margin: 15px; }
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -81,8 +143,20 @@
     <div class="result" id="result"></div>
 
     <h2><i class="fas fa-credit-card icon"></i> Payment</h2>
-    <p>You can pay easily via Venmo: <a href="https://account.venmo.com/u/Rajita-Maharjan" target="_blank" class="venmo-link">@rajita-maharjan</a></p>
+    <p>Pay easily via Venmo:</p>
+    <a href="https://account.venmo.com/u/Rajita-Maharjan" target="_blank" class="venmo-link">@rajita-maharjan</a>
   </main>
+
+  <footer>
+    <p><i class="fas fa-phone"></i> Call us: (123) 456-7890</p>
+    <p><i class="fas fa-envelope"></i> Email: info@dogboarding.com</p>
+    <div class="socials">
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+    <p>&copy; 2025 Loving Dog Sitting and Cozy Boarding. All rights reserved.</p>
+  </footer>
 
   <script>
     function calculateCost() {
@@ -96,13 +170,13 @@
       }
 
       let diffHours = (checkout - checkin) / (1000 * 60 * 60);
-      let nights = Math.floor(diffHours / 24);
-      let remainingHours = diffHours % 24;
       let cost = 0;
 
-      if (nights === 0) {
+      if (diffHours <= 24) {
         cost = 35;
       } else {
+        let nights = Math.floor(diffHours / 24);
+        let remainingHours = diffHours % 24;
         cost = 40 * nights;
         if (remainingHours > 0 && remainingHours <= 8) {
           cost += 20;
